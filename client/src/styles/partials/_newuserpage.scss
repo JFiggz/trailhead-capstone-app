@@ -1,0 +1,111 @@
+.new-user{
+    padding: spaceIncr() 0 spaceIncr(5);
+    color: $font-light-color;
+    @include flex(column, flex-start, stretch);
+
+
+    &__container{
+        @include flex(column, flex-start, stretch);
+
+        @include desktop{
+            width: 75vw;
+            max-width: 800px;
+            background-color: $dash-card-color;
+            padding: spaceIncr(3);
+            border-radius: 4px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            margin: 0 auto;
+        }
+    }
+
+    &__header{
+        @extend .detail-header;
+        margin: 0 0 spaceIncr();
+
+        span{
+            @extend .sub-header;
+            display: block;
+            margin-bottom: spaceIncr(3);
+        }
+
+        @include desktop{
+            color: $base-font-dark;
+        }
+    }
+
+    &__label{
+        @extend .label-text;
+        @include flex(column, flex-start, flex-start);
+        margin-bottom: spaceIncr();
+        position: relative;
+
+        @include desktop{
+            color: $base-font-dark;
+        }
+    }
+
+    &__sub-header{
+        @extend .detail-header;
+        margin: spaceIncr(3) 0 spaceIncr();   
+        
+        
+        @include desktop{
+            color: $base-font-dark;
+        }
+    }
+
+    &__coords{
+        @extend .para-text;
+        margin: 0 0 spaceIncr(4);   
+
+        @include desktop{
+            color: $base-font-dark;
+        }
+    }
+
+    &__city-select{
+        @extend .detail-header;
+        margin: spaceIncr(4) 0 spaceIncr();
+
+        @include desktop{
+            color: $base-font-dark;
+        }
+    }
+
+    button{
+        align-self: center;
+        &:nth-of-type(2){
+            margin-top: spaceIncr(2);
+            align-self: flex-start;
+        }
+        &:last-of-type{
+            margin-top: spaceIncr(5);
+            width: 100%;
+        }
+    }
+
+    &__input{
+        border-bottom: 2px solid $font-light-color;
+        color: $font-light-color;
+
+        @include desktop{
+            border-bottom: 2px solid $base-font-dark;
+            color: $base-font-dark;
+        }
+        
+        &::placeholder{
+            color: $placeholder-light;
+        }
+
+        &:active{
+            outline: none;
+            border: 2px solid $font-light-color;
+        }
+    
+        &:focus{
+            outline: none;
+            border: 2px solid $font-light-color;
+        }
+    }
+
+}

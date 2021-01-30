@@ -1,0 +1,95 @@
+.card{
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    @include flex(column, flex-start, flex-start);
+    border-radius: 4px;
+    background-color: $card-colour;
+    color: $card-font;
+    margin-bottom: calc(#{$favBtnSize/2});
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: all ease-out 0.15s;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    span{
+        width: 100%;
+        padding: spaceIncr() spaceIncr() spaceIncr(3);
+
+        @include tablet{
+            padding: spaceIncr(2) spaceIncr(2) spaceIncr(3);
+        }
+    }
+
+    &__favourite-btn{
+        position: absolute;
+        width: $favBtnSize;
+        left:50%;
+        bottom: calc(#{$favBtnSize/-2});
+        transform: translateX(-50%);
+        z-index: 10;
+        filter:drop-shadow(0px 6px 7px rgba(0, 0, 0, 0.3) );
+        &:hover{
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        &:active{
+            transform: translateX(-50%) scale(1);
+        }
+
+        &--active{
+            filter: opacity(70%);
+        }
+    }
+
+    &__img{
+        object-fit: cover;
+        width: 100%;
+        height: 100px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        @include tablet{
+            height: 150px;
+        }
+    }
+
+    &__no-img-text{
+        margin: 0;
+        padding: spaceIncr();
+        height: 100px;
+        width: 100%;
+        @include flex(column, center, center);
+        background-color: rgba(0,0,0,0.4);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
+        @include tablet{
+            height: 150px;
+        }
+    }
+
+    &__label{
+        @extend .para-text;
+        font-weight: 600;
+        @include flex(row, flex-start, flex-start);
+        margin-bottom: spaceIncr();
+        width: 100%;
+        cursor: pointer;
+        p{
+            @extend .para-text;
+            margin: 0 0 0 spaceIncr();
+            cursor: pointer;
+        }
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover{
+        transform: translateY(-4px);
+    }
+}

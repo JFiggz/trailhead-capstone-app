@@ -1,0 +1,40 @@
+.about{
+    color: $font-light-color;
+    padding: 0 0 spaceIncr(5);
+
+    @include tablet{
+        @include flex(column, flex-start, flex-start);
+    }
+
+    &__header{
+        @extend .sub-header;
+        margin: 0 0 spaceIncr(2);
+    }
+
+    &__text{
+        @extend .para-text;
+        margin-bottom: spaceIncr();
+        @include tablet{
+            margin-bottom: spaceIncr(2);
+        }
+    }
+
+    &__feature-list{
+        margin: 0 0 spaceIncr(3);
+        padding: 0 0 0 spaceIncr(2);
+        @include tablet{
+            margin: 0 0 spaceIncr(4);
+            padding: 0 0 0 spaceIncr(4);
+        }
+    }
+
+    &__feature-item{
+        @extend .para-text;
+        padding: spaceIncr() 0;
+        list-style: none;
+    }
+
+    &__signup-btn{
+        width: 169px;
+    }
+}

@@ -1,0 +1,27 @@
+.btn{
+    @extend .btn-text;
+    text-decoration: none;
+    color: $btn-text;
+    border-radius: 24px;
+    padding: spaceIncr() spaceIncr(3);
+    background-color: $btn-bg;
+    border: 1px solid $btn-border;
+    @include flex(row, center);
+    &:hover{
+        background-color: $btn-hover;
+        color: $btn-hover-text;
+        border: 1px solid $btn-hover-border;
+    }
+    &:focus{
+        outline: none;
+        border: 1px solid $default-light;
+    }
+    &:active{
+        outline: none;
+        border: 1px solid $btn-border;
+    }
+
+    &--no-fill{
+        background-color: transparent;
+    }
+}

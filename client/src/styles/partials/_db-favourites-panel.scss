@@ -1,0 +1,112 @@
+.favourites{
+    @include flex(column, flex-start, stretch);
+    background-color: $dash-card-color;
+    border-radius: 4px;
+    padding: spaceIncr(2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    &__header{
+        @extend .sub-header;
+        margin-bottom: spaceIncr(3);
+    }
+    
+    &__column-headers{
+        @include flex(row, flex-start);
+        border-bottom: 1px solid $page-border;
+    }
+
+    &__column-text{
+        @extend .detail-header;
+        &:first-child{
+            width: 40%;
+            min-width: 120px;
+            flex-shrink: 0;
+            margin-right: spaceIncr(0.5);
+        }
+        &:last-child{
+            flex-grow:1;
+        }
+    }
+
+    &__list{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        @include flex(column, flex-start, stretch);
+
+        @include desktop{
+            overflow: auto;
+            flex-grow: 1;
+        }
+    }
+
+    &__list-item{
+        list-style: none;
+        position: relative;
+        @include flex(row, flex-start, flex-start);
+        padding: spaceIncr(2) 0 spaceIncr(6);
+        border-bottom: 1px solid $page-border;
+
+        span{
+            position: absolute;
+            width: 100%;
+            bottom:0;
+            left: 0;
+            @include flex(row, space-between);
+        }
+
+        @include tablet{
+            padding: spaceIncr(3) 0 spaceIncr(7);
+        }
+    }
+
+    &__btn{
+        background-color: transparent;
+        padding: spaceIncr(0.75);
+        border: 1px solid transparent;
+        cursor: pointer;
+        img{
+            width: spaceIncr(2);
+            pointer-events: none;
+
+            @include tablet{
+                width: spaceIncr(3);
+            }
+        }
+
+        &:active{
+            outline: none;
+            border: 1px solid $btn-hover-border;
+        }
+
+        &:focus{
+            outline: none;
+            border: 1px solid $btn-hover-border;
+        }
+    }
+
+    &__text{
+        @extend .para-text;
+
+        &--name{
+            width: 40%;
+            min-width: 120px;
+            flex-shrink: 0;
+            margin-right: spaceIncr(0.5);
+        }
+        &--notes{
+            flex-grow:1;
+        }
+    }
+
+    @include tablet{
+        padding: spaceIncr(3);
+    }
+
+    @include desktop{
+        margin-bottom: 0;
+        grid-area: favourites;
+        max-height: 750px;
+    }
+
+}

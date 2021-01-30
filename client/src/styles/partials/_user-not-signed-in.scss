@@ -1,0 +1,39 @@
+.user-not-signed{
+    min-height: 100vh;
+    @include flex(column, center, center);
+
+    &__container{
+        @include flex(column, flex-start, center);
+        padding: spaceIncr(6) 0;
+        width: 100%;
+
+        @include tablet{
+            @include flex(row, center, center, wrap);
+        }
+    }
+
+    &__logo{
+        width: 80%;
+        max-width: 400px;
+    }
+
+    &__header{
+        @extend .sub-header;
+        color: $font-light-color;
+        text-align: center;
+        margin: spaceIncr(4) 0;
+        width: 100%;
+        span{
+            display: block;
+            padding: 0 0 spaceIncr(3);
+        }
+    }
+
+    &__btn{
+        margin: spaceIncr() 0 0;
+
+        @include tablet{
+            margin: 0 spaceIncr(2) !important;
+        }
+    }
+}

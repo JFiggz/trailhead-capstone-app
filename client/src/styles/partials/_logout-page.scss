@@ -1,0 +1,21 @@
+.logout{
+    height: 100vh;
+    @include flex(column, center, center);
+
+    &__logo{
+        width: 80%;
+        max-width: 400px;
+    }
+
+    &__header{
+        @extend .main-header;
+        line-height: 115%;
+        color: $font-light-color;
+        text-align: center;
+        margin: spaceIncr(4) 0;
+        span{
+            display: block;
+            padding: 0 0 spaceIncr(3);
+        }
+    }
+}

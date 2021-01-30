@@ -1,0 +1,141 @@
+.home {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient($overlay, $overlay), url('../assets/images/home-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 73%;
+    @include flex(column, flex-start, flex-start);
+
+    @include tablet{
+        background-position: 89%;
+    }
+
+    @include desktop{
+        background-position: 100%;
+    }
+
+    &__container {
+        @include flex(column);
+        height: 100%;
+        padding: spaceIncr(6) 0;
+        @include tablet{
+            @include flex(row, flex-start, flex-start,wrap);
+            height: auto;
+        }
+    }
+
+    &__logo {
+        height: 40px;
+        @include tablet{
+            order: 1;
+            height: 50px;
+        }
+    }
+
+    &__header {
+        @extend .main-header;
+        text-align: center;
+        color: $base-font-dark;
+        
+        &-cont{
+            width: 100%;
+            margin: spaceIncr(2) 0 spaceIncr(2);
+            @include flex(row,center);
+    
+            @include tablet{
+                @include flex(row,flex-start);
+                order: 3;
+                margin: spaceIncr(15) 0 spaceIncr(2);
+            }
+
+            @include desktop{
+                margin: spaceIncr(15) 0 spaceIncr(3);
+            }
+        }
+
+        @include tablet{
+            text-align: left;
+            width: 60%;
+        }
+    }
+
+    &__text {
+        @extend .para-text;
+        width: 80%;
+        text-align: center;
+        color: $base-font-dark;
+        font-weight: 600;
+        margin: 0;
+
+        &-cont{
+            width: 100%;
+            margin: 0 0 spaceIncr(2);
+            @include flex(row,center);
+    
+            @include tablet{
+                @include flex(row,flex-start);
+                order: 4;
+            }
+
+            @include desktop{
+                margin: 0 0 spaceIncr(3);
+            }
+        }
+
+        @include tablet{
+            width: 60%;
+            max-width: 380px;
+            text-align: left;
+        }
+
+        @include desktop{
+            max-width: 500px;
+            font-size: 1.15rem;
+            line-height: 100%;
+            font-weight: bold;
+        }
+    }
+
+    &__learn-btn{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @include tablet{
+            order: 5;
+            width: 169px;
+            margin-right: spaceIncr(6);
+        }
+    }
+
+    &__auth-btn {
+        margin-top: auto;
+        width: 100%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @include tablet{
+            order: 6;
+            width: 169px;
+        }
+
+        &:last-of-type {
+            margin: spaceIncr() 0 0;
+            @include tablet{
+                order: 2;
+                margin:0;
+                margin-left: auto;
+            }
+        }
+
+    }
+
+    &__login-text {
+        @extend .para-text;
+        color: $font-light-color;
+        margin-right: spaceIncr(0.5);
+    }
+
+    &__login-link {
+        @extend .para-text;
+
+        color: $font-light-color;
+    }
+
+}

@@ -1,0 +1,59 @@
+.forecast{
+    width: 100%;
+    @include flex(row, flex-start,stretch, wrap);
+    background-color: $dash-card-color;
+    border-radius: 4px;
+    padding: spaceIncr(2);
+    margin-bottom: spaceIncr(5);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    &__header{
+        width: 100%;
+        @extend .sub-header;
+        margin-bottom: spaceIncr(3);
+    }
+
+    span{
+        flex-basis: 33.333%;
+        @include flex(column, space-between);
+        padding: 0 spaceIncr(0.5);
+        flex-grow: 1;
+    }
+
+    &__icon{
+        width: 75px;
+        
+        @include tablet{
+            width: 125px;
+        }
+    }
+
+    &__text{
+        @extend .larger-bolder-para-text;
+        text-align: center;
+    }
+
+    &__desc{
+        @extend .para-text;
+        text-align: center;
+    }
+
+    &__temp{
+        @extend .larger-bolder-para-text ;
+        text-align: center;
+        margin-top: spaceIncr(2);
+
+        @include tablet{
+            margin-top: spaceIncr(3);
+        }
+    }
+
+    @include tablet{
+        padding: spaceIncr(3);
+    }
+
+    @include desktop{
+        margin-bottom: 0;
+        grid-area: forecast;
+    }
+}

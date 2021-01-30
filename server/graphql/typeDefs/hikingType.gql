@@ -1,0 +1,30 @@
+type Trail {
+    id: ID!
+    name: String!
+    type: String
+    summary: String
+    difficulty: String!
+    stars: Float!
+    starVotes: Int
+    location: String!
+    url: String
+    imgSqSmall: String
+    imgSmall: String
+    imgSmallMed: String
+    imgMedium: String
+    length: Float!
+    ascent: Int!
+    descent: Int
+    high: Int
+    low: Int
+    longitude: Float!
+    latitude: Float!
+    conditionStatus: String
+    conditionDetails: String
+    conditionDate: String
+}
+
+
+type Query{
+    getTrails(lat: Float!, lon: Float!, maxDist: Int, maxResults: Int, minLen:Int, minStars:Int): [Trail]!
+}

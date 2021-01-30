@@ -1,0 +1,121 @@
+.auth{
+    @include flex(column, center);
+    padding: spaceIncr(3) 0 spaceIncr(5);
+    color: $font-light-color;
+
+    @include desktop{
+        padding: spaceIncr(2) 0 spaceIncr(5);
+        flex-grow: 1;
+        color: inherit;
+    }
+
+    &__container{
+        @include flex(column, center);
+        width: 100%;
+
+        @include desktop{
+            width: 40vw;
+            max-width: 660px;
+            background-color: $dash-card-color;
+            padding: spaceIncr(3);
+            border-radius: 4px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+    }
+
+    &__header{
+        @extend .sub-header;
+        text-align: center;
+        margin: 0 0 spaceIncr(3);
+        
+    }
+
+    &__btn{
+        @include flex(row, center,center);
+        padding: spaceIncr(1.5) spaceIncr(2);
+        background-color: white;
+        border-radius: 4px;
+        border: 2px solid transparent;
+        outline: none;
+        margin-bottom: spaceIncr(3);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.54);
+
+        img{
+            width: 18px;
+            height: 18px;
+            object-fit: cover;
+            margin-right: 24px;
+        }
+
+        &:active{
+            outline: none;
+            transform:scale(0.95);
+        }
+
+        &:focus{
+            outline: none;
+            border: 2px solid $base-font-dark;
+        }
+    }
+
+    &__form{
+        width: 100%;
+    }
+
+    &__label{
+        @include flex(column, flex-start, flex-start);
+        width: 100%;
+        margin: 0 0 spaceIncr();
+        position: relative;
+
+        @include tablet{
+            margin: 0 0 spaceIncr(2);
+        }
+        
+    }
+    
+    &__input{
+        border-bottom: 2px solid $font-light-color;
+        color: $font-light-color;
+        
+        &::placeholder{
+            color: $placeholder-light;
+        }
+
+        &:active{
+            outline: none;
+            border: 2px solid $font-light-color;
+        }
+    
+        &:focus{
+            outline: none;
+            border: 2px solid $font-light-color;
+        }
+
+        @include desktop{
+            border-bottom: 2px solid $base-font-dark;
+            color: $base-font-dark;
+        }
+    }
+
+    span{
+        @include flex(row,center);
+        margin-top: spaceIncr(2);
+    }
+
+    &__login-text{
+        @extend .para-text;
+        margin-right: spaceIncr(0.5);
+    }
+
+    &__login-link{
+        @extend .para-text;
+        color: inherit;
+    }
+}

@@ -1,0 +1,104 @@
+# Weather data from IQAir to get pollution data
+type AQPollution{
+    ts: String!
+    aqius: Int!
+    mainus: String
+    aqicn: Int
+    maincn: String
+}
+
+# Weather data from Open Weather Map to get daily, hourly and current forecasts
+
+type CurrentWeather{
+    dt: Int!
+    sunrise: Int!
+    sunset: Int!
+    temp: Float!
+    feels_like: Float!
+    pressure: Int!
+    humidity: Int
+    dew_point: Float
+    uvi: Float
+    clouds: Int
+    visibility: Int
+    wind_speed: Float
+    wind_deg: Int
+    weather: [WeatherIcon!]!
+    rain: HourlyRain
+    snow: HourlySnow
+}
+
+type WeatherIcon{
+    id: Int!
+    main: String!
+    description: String!
+    icon: String!
+}
+
+type HourWeather{
+    dt: Int!
+    temp: Float!
+    feels_like: Float!
+    pressure: Int
+    humidity: Int
+    dew_point: Float
+    uvi: Float
+    clouds: Int
+    visibility: Int
+    wind_speed: Float
+    wind_deg: Int
+    weather: [WeatherIcon!]!
+    pop: Float
+    rain: HourlyRain
+    snow: HourlySnow
+}
+
+type HourlyRain{
+    oneH: Float
+}
+
+type HourlySnow{
+    oneH: Float
+}
+
+type DailyWeather{
+    dt: Int!
+    sunrise: Int!
+    sunset: Int!
+    temp: Temperature!
+    feels_like: FeelsLike!
+    pressure: Int
+    humidity: Int
+    dew_point: Float
+    wind_speed: Float
+    wind_deg: Int
+    weather: [WeatherIcon!]!
+    clouds: Int
+    pop: Float
+    rain: Float
+    snow:Float
+    uvi: Float
+}
+
+type Temperature{
+    day: Float!
+    min: Float!
+    max: Float!
+    night: Float!
+    eve: Float!
+    morn: Float!
+}
+
+type FeelsLike{
+    day: Float!
+    night: Float!
+    eve: Float!
+    morn: Float!
+}
+
+type Query{
+    getAirQuality(lat: Float!, lon: Float!) : AQPollution!
+    getCurrentWeather(lat: Float!, lon: Float!) : CurrentWeather!
+    getHourlyWeather(lat: Float!, lon: Float!) : [HourWeather!]!
+    getDailyWeather(lat: Float!, lon: Float!) : [DailyWeather!]!
+}

@@ -1,0 +1,8 @@
+.container{
+    width: 91.111%;
+    margin: 0 auto;
+    @include tablet{
+        width: 91.667%;
+        max-width: 1200px;
+    }
+}

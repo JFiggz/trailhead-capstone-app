@@ -1,0 +1,98 @@
+header{
+    width: 100%;
+}
+
+.nav{
+    @include flex(row,space-between);
+    padding: spaceIncr(2) 0;
+
+    @include tablet{
+        padding: spaceIncr(3) 0;
+    }
+
+    &--db{
+        padding: spaceIncr(2) 0 spaceIncr(3);
+        grid-area: header;
+    }
+
+    &__logo-link{
+        @include flex(row,center);
+    }
+
+    &__logo{
+        width: 125px;
+        @include tablet{
+            width: 175px;
+        }
+    }
+
+    &__list{
+        @include flex(row, flex-end);
+        padding: 0;
+        margin: 0;
+    }
+
+    &__list-item{
+        list-style: none;
+        color: $font-light-color;
+        @include flex(row, center);
+        &:first-of-type{
+            margin-right: spaceIncr();
+        }
+    }
+
+    &__link{
+        @extend .link-text;
+        padding: spaceIncr();
+        text-decoration: none;
+        color: inherit;
+        border-radius: 36px;
+
+        @include tablet{
+            padding: spaceIncr() spaceIncr(2);
+        }
+
+        &--outline{
+            border: 1px solid $btn-hover-text;
+            padding: spaceIncr() spaceIncr(2);
+
+            @include tablet{
+                padding: spaceIncr() spaceIncr(3);
+            }
+        }
+
+        &:active{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+
+        &:hover{
+            color: $btn-text;
+            background-color: $btn-bg;
+            border: 1px solid $btn-hover-border;
+        }
+
+        &--db{
+            border: 1px solid $default-light;
+            background-color: transparent;
+            
+            &:active{
+                outline: none;
+                border: 1px solid $btn-hover-border;
+                background-color: $btn-hover;
+            }
+
+            &:focus{
+                outline: none;
+                border: 1px solid $btn-border;
+            }
+        }
+    }
+}
+
+.active{
+    outline: none;
+    border: 1px solid $btn-hover-border;
+    color: $btn-text;
+    background-color: $btn-bg;
+}

@@ -1,0 +1,250 @@
+.trail-disp{
+    margin-bottom: spaceIncr(5);
+    padding-bottom: $size;
+
+    &__cont{
+        width: 100%;
+        background-color: $dash-card-color;
+        border-radius: 4px;
+        padding: spaceIncr(2);
+        margin-bottom: spaceIncr(2);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+        @include tablet{
+            padding: spaceIncr(3);
+        }
+    }
+
+    &__header{
+        @extend .sub-header;
+        width: 100%;
+        margin-bottom: spaceIncr(3);
+    }
+
+    &__filter-label{
+        width:100%;
+    }
+
+    &__filter-header{
+        @extend .detail-header;
+        @include flex(row,space-between);
+        cursor: pointer;
+        img{
+            padding: spaceIncr();
+            width: 40px;
+        }
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &__label{
+        @extend .label-text;
+        @include flex(column, flex-start, flex-start, nowrap);
+        width: 100%;
+        margin-bottom: spaceIncr(3);
+        &--first{
+            margin: spaceIncr() spaceIncr(2) 0 0;
+        }
+        &--slider{
+            position: relative;
+
+            @include tablet{
+                margin-bottom: spaceIncr(5);
+            }
+        }
+    }
+
+    &__progress{
+        position: absolute;
+        border-radius: calc(#{$slider-height/2});
+        height: 8px;
+        bottom: 0;
+        left:0;
+        background-color: $slider-progress;
+        pointer-events: none;
+        overflow: visible;
+        z-index: 2;
+
+        &-img{
+            position:absolute;
+            right: -8.5px;
+            top: -16px;
+            width: 20px;
+            object-fit: cover;
+            
+            @include tablet{
+                right: -10.625px;
+                top: -20px;
+                width: 25px;
+            }
+        }
+
+        span{
+            position: absolute;
+            font-size: 0.65rem;
+            font-weight: 500;
+            line-height: 100%;
+            @include flex(row, center);
+            border-radius: 4px;
+            right: -12.5px;
+            bottom: -26.5px;
+            width: 30px;
+            height: 18px;
+            background-color: $slider-progress;
+            color: $card-colour;
+
+            @include tablet{
+                font-size: 0.8125rem;
+                right: -14.5px;
+                bottom: -37px;
+                width: 32px;
+                height: 24px;
+            }
+        }
+    }
+
+    &__drive-cont{
+        @include flex(row, space-between, flex-end);
+        padding-bottom: spaceIncr(3);
+        margin-bottom: spaceIncr(3);
+        border-bottom: 2px solid $page-border;
+    }
+
+    &__input{
+        @extend .para-text;
+        padding: spaceIncr();
+        background: $slider-base;
+        border-radius: 37px;
+        border: 1px solid transparent;
+        outline: none;
+        margin-top: spaceIncr(2);
+        width: 100%;
+        
+
+        &::placeholder{
+            font-family: inherit;
+            color: $placeholder;
+        }
+    
+        &:active{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+    
+        &:focus{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+    }
+
+    &__slider{
+        -webkit-appearance: none;
+        appearance: none;
+        position: relative;
+        width: 100%;
+        border-radius: calc(#{$slider-height/2});
+        height: $slider-height;
+        background: $slider-base;
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        margin: spaceIncr(3) 0 0;
+        cursor: pointer;
+        z-index: 1;
+
+        &::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            appearance: none;
+            height: 32px;
+            width: 20px;
+            cursor: pointer;
+
+            @include tablet{
+                height: 40px;
+                width: 25px;
+            }
+
+        }
+        
+        &::-moz-range-thumb{
+            height: 32px;
+            width: 20px;
+            cursor: pointer;
+            
+            @include tablet{
+                height: 40px;
+                width: 25px;
+            }
+
+        }
+
+        @include tablet{
+            margin: spaceIncr(4) 0 0;
+        }
+    }
+
+    
+    @include tablet{
+        padding-bottom: $size-larger;
+    }
+
+    @include desktop{
+        overflow: hidden;
+        margin-bottom: 0;
+        grid-area: trails;
+    }
+
+}
+
+
+//---------------------------------Slick carousel styles---------------------------------------
+
+.slick{
+    &-slide>div{
+        margin: 0 spaceIncr();
+    }
+
+    &-track{
+        margin: 0 spaceIncr(-1);
+    }
+
+    &-list{
+        padding: 0 58px !important;
+        overflow: visible !important;
+    }
+
+    &-next{
+        z-index: 99;
+        bottom: -$size !important;
+        top:auto !important;
+        right: calc(50% - #{$size + 16px}) !important;
+        transform: translateX(50%) !important;
+        width: $size !important;
+        height: $size !important;
+
+        @include tablet{
+            bottom: -$size-larger !important;
+            right: calc(50% - #{$size-larger + 16px}) !important;
+            width: $size-larger !important;
+            height: $size-larger !important;
+        }
+    }
+
+    &-prev{
+        z-index: 99;
+        bottom: -$size !important;
+        top:auto !important;
+        left: calc(50% - #{$size + 16px})!important;
+        transform: translateX(-50%) !important;
+        width: $size !important;
+        height: $size !important;
+
+        @include tablet{
+            bottom: -$size-larger !important;
+            left: calc(50% - #{$size-larger + 16px})!important;
+            width: $size-larger !important;
+            height: $size-larger !important;
+        }
+    }
+}

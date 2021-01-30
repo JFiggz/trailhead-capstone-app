@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: $base-font-dark;
+    background: url('../assets/images/bg-overlay.png'), linear-gradient($page-bg, $page-bg);
+}
+
+.App{
+    min-height: 100vh;
+    @include flex(column, flex-start, stretch);
+    overflow: hidden;
+}

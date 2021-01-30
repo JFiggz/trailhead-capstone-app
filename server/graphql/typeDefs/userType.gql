@@ -1,0 +1,75 @@
+type User{
+    id: ID!
+    auth_id: String
+    email: String
+    first_name: String
+    last_name: String
+    creation_date: String
+    login_data: UserLogin!
+    UserPref: UserPreferences
+    LastLocation: LastLocation
+    Favourites: [UserFavourites]!
+}
+
+type UserLogin{
+    id: ID!
+    userId: ID!
+    user: User!
+    pwd: String
+}
+
+type UserPreferences{
+    id: ID!
+    userId: ID!
+    user: User!
+    set_lat: Float
+    set_lon: Float
+}
+
+type LastLocation{
+    id: ID!
+    userId: ID!
+    user: User!
+    lat: Float!
+    lon: Float!
+    last_set: String!
+}
+
+type UserFavourites{
+    id: ID!
+    userId: ID!
+    user: User!
+    trail_id: ID!
+    trail_name: String!
+    trail_notes: String
+}
+
+type UserCoordinates{
+    lat: Float!
+    lng: Float!
+    city: String!
+    country: String!
+}
+
+type UserCity{
+    city: String!
+    state: String!
+    country: String!
+}
+
+type Query{
+    getUserFavourites(userId:ID) : [UserFavourites]!
+    getUserCity(lat:Float!, lon: Float!) : UserCity!
+}
+
+type Mutation{
+    signupUser(email:String! , pwd: String!) : Boolean!
+    loginUser(email:String! , pwd: String!) : Boolean!
+    updateUserPref(fName: String! , lName: String , lat: Float! , lon: Float!): Boolean!
+    getUserCoordinates(city:String!, country:String!) : UserCoordinates!
+    getUserData(id:ID) : User!
+    logoutUser(id:ID) : Boolean!
+    addFavourite(id:Int!, notes: String, name: String!) : Boolean!
+    editFavourite (id:Int!, notes: String) : Boolean!
+    deleteFavourite (id:Int!) : Boolean!
+}

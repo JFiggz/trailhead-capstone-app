@@ -1,0 +1,68 @@
+.curr-weather{
+    @include flex(row, flex-start, stretch, wrap);
+    margin-bottom: spaceIncr(5);
+    background-color: $dash-card-color;
+    border-radius: 4px;
+    padding: spaceIncr(2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+    &__header{
+        @extend .sub-header;
+        width: 100%;
+        margin-bottom: spaceIncr(3);
+    }
+
+    span{
+        flex-basis: 33.333%;
+        @include flex(column, space-around);
+        flex-grow: 1;
+    }
+
+    &__container{
+        width:100%;
+        @include flex(row, center)
+    }
+
+    &__icon{
+        width: 75px;
+        height: 75px;
+
+        @include tablet{
+            width: 125px;
+            height: 125px;
+        }
+    }
+
+    &__text{
+        @extend .label-text;
+        text-align: center;
+
+        &--aq{
+            margin-bottom: spaceIncr(2);
+        }
+    }
+
+    &__temp{
+        @extend .sub-header;
+        flex-basis: 33.333%;
+        text-align: center;
+    }
+
+    &__aq{
+        @extend .sub-header;
+        @include flex(row,center);
+        width: 75px;
+        height: 75px;
+        border-radius: 4px;
+    }
+
+
+    @include tablet{
+        padding: spaceIncr(3);
+    }
+
+    @include desktop{
+        margin-bottom: 0;
+        grid-area: weather;
+    }
+}

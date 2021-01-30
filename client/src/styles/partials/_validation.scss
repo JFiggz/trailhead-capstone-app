@@ -1,0 +1,45 @@
+.errorValidate{
+    &::before{
+        @extend .validation;
+        content: "This field is required.";
+    }
+}
+
+.confirmPwdValidate{
+    &::before{
+        @extend .validation;
+        content: "Passwords must match.";
+    }
+}
+
+.setLocationValidate{
+    &::before{
+        @extend .validation;
+        content: "Location is required.";
+    }
+}
+
+.manualLocValidate{
+    &::before{
+        @extend .validation;
+        content: "No results found.";
+    }
+}
+
+.noUserValidate{
+
+    &::before{
+        @extend .validation;
+        content: "No user found.";
+        @include tablet{
+            content: "No user found with that email/password combination.";
+        }
+    }
+}
+
+.userExistsValidate{
+    &::before{
+        @extend .validation;
+        content: "User already exists with this email.";
+    }
+}

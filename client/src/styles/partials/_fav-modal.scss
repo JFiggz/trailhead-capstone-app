@@ -1,0 +1,66 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    @include flex(row, center);
+
+    &__close{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top:0;
+        left:0;
+        z-index: 101;
+        background-color: $overlay-modal;
+    }
+    
+    &__content{
+        position: relative;
+        @include flex(row, flex-start, flex-start, wrap);
+        z-index: 102;
+        background-color: $dash-card-color;
+        border-radius: 4px;
+        padding: spaceIncr(2);
+    }
+
+    &__trail-name{
+        @extend .detail-header;
+        margin: 0 0 spaceIncr(2);
+        width: 100%;
+    }
+
+    &__comment-label{
+        @extend .label-text;
+        padding: 0 0 spaceIncr(3);
+        width: 100%
+    }
+
+    &__comment{
+        @extend .para-text;
+        font-family: inherit;
+        width: 100%;
+        resize: none;
+        height: 110px;
+        margin-top: spaceIncr();
+        padding: spaceIncr();
+        border: 1px solid $page-border;
+
+        &:focus{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+
+        &:active{
+            outline: none;
+            border: 1px solid $btn-border;
+        }
+    }
+
+    &__cancel-btn{
+        margin-left: auto;
+        margin-right: spaceIncr(2);
+    }
+}

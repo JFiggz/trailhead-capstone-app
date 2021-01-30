@@ -1,0 +1,29 @@
+@mixin mobileOnly {
+    @media screen and (max-width:767px){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width:768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media screen and (min-width:1200px){
+        @content;
+    }
+}
+
+@function spaceIncr($incr: 1){
+    $result: $base-padding * $incr;
+    @return $result;
+}
+
+@mixin flex($dir: row, $justify: flex-start, $align: center, $wrap: nowrap){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}

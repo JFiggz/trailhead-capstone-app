@@ -1,0 +1,42 @@
+// Base spacing value
+$base-padding: 8px;
+
+//Revised Colour Scheme
+$default-dark: #000000;
+$default-light:#ffffff;
+
+$btn-bg: #95a792;
+$btn-border: #403f48;
+$btn-hover: #596c68;
+$btn-hover-text:#ffffff;
+$btn-hover-border:#403f48;
+$btn-text:#2a2a2a;
+
+$base-font-dark:#2a2a2a;
+$font-dark-alt-color:#403f48;
+$font-light-color: #ffffff;
+
+$page-bg:  #596c68;
+$page-border: #403f48;
+
+$slider-progress: #596c68;
+$slider-base: #ffffff;
+
+$card-colour: #e3d9ca;
+$card-font:#2a2a2a;
+
+$overlay: rgba(0,0,0,0);
+$overlay-modal: rgba(0,0,0,0.40);
+
+$dash-card-color: #95a792;
+
+$placeholder: #403f48;
+$placeholder-light: rgba(255,255,255, 0.65);
+
+$validation-error: #C73E3E;
+
+$favBtnSize: 50px; //Width and height property for the favourite button (Also adjusts sizing to ensure it does not conflict with arrow)
+
+$size: 40px; //Width and height property for the slider next/back arrows (Also changes padding bottom of parent to accomodate size)
+$size-larger:50px; //Width and height property for the slider next/back arrows on tablet and up
+$slider-height: 8px;// Height of the slider and progress bar

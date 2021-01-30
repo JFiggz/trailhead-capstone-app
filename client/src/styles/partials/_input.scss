@@ -1,0 +1,28 @@
+.input {
+    font-family: inherit;
+    @extend .para-text;
+    padding: spaceIncr();
+    color: inherit;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-bottom: 2px solid $btn-border;
+    width: 100%;
+    margin-bottom: spaceIncr(0.5);
+    background-color: transparent;
+
+    &::placeholder{
+        font-family: inherit;
+        color: $placeholder;
+    }
+
+    &:active{
+        outline: none;
+        border: 2px solid $btn-border;
+    }
+
+    &:focus{
+        outline: none;
+        border: 2px solid $btn-border;
+    }
+}

@@ -1,0 +1,32 @@
+.dashboard{
+    padding: 0 0 spaceIncr(5);
+    @include flex(column, flex-start, stretch);
+
+    &__header{
+        @extend .sub-header;
+        color: $font-light-color;
+        margin-bottom: spaceIncr(4);
+        filter: drop-shadow( 0px 2px 6px rgba(0, 0, 0, 0.3));
+        width: 100%;
+
+        @include desktop{
+            grid-area: welcome;
+            margin: 0;
+        }
+    }
+
+    @include desktop{
+        display: grid;
+        grid-template-rows: 88px 68px 295px 460px 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "header header header"
+        "welcome welcome welcome"
+        "city-search weather weather"
+        "city-search forecast forecast"
+        "trails trails favourites";
+        gap: spaceIncr(2) spaceIncr(2);
+        justify-items: stretch;
+        align-items: stretch;
+    }
+}

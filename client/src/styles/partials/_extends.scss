@@ -1,0 +1,176 @@
+.main-header{
+    font-weight: bold;
+    font-size: 2.625rem;
+    line-height: 100%;
+    margin: 0;
+
+    @include tablet{
+        font-size: 4.375rem;
+    }
+
+    @include desktop{
+        font-size: 4.9375rem;
+    }
+}
+
+.sub-header{
+    font-weight: bold;
+    font-size: 2.0625rem;
+    line-height: 3.1875rem;
+    margin: 0;
+
+    @include tablet{
+        font-size: 2.6875rem;
+        line-height: 4.25rem;
+    }
+
+    @include desktop{
+        font-size: 2.375rem;
+        line-height: 3.9375rem;
+    }
+}
+
+.detail-header{
+    font-weight: 700;
+    font-size: 1.625rem;
+    line-height: 2.5625rem;
+    margin: 0;
+
+    @include tablet{
+        font-size: 2.125rem;
+        line-height: 3.4375rem;
+    }
+
+    @include desktop{
+        font-size: 1.875rem;
+        line-height: 3.1875rem;
+    }
+}
+
+.larger-bolder-para-text {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    margin: 0;
+
+    @include tablet{
+        font-size: 1.3125rem;
+        line-height: 2.25rem;
+    }
+
+    
+    @include desktop{
+        font-size: 1.1875rem;
+        line-height: 2.1875rem;
+    }
+}
+
+.larger-para-text{
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    margin: 0;
+
+    @include tablet{
+        font-size: 1.3125rem;
+        line-height: 2.25rem;
+    }
+
+    @include desktop{
+        font-size: 1.1875rem;
+        line-height: 2.1875rem;
+    }
+}
+
+.para-text{
+    font-weight: 500;
+    font-size: 0.8125rem;
+    line-height: 1.3125rem;
+    margin: 0;
+
+    @include tablet{
+        font-size: 1.0625rem;
+        line-height: 1.875rem;
+    }
+
+    @include desktop{
+        font-size: 0.9375rem;
+        line-height: 1.8125rem;
+    }
+}
+
+.link-text{
+    font-weight: 700;
+    font-size: 0.8125rem;
+    line-height: 100%;
+    margin: 0;
+
+    @include tablet{
+        font-size: 1.0625rem;
+        line-height: 1.875rem;
+    }
+
+    @include desktop{
+        font-size: 0.9375rem;
+        line-height: 1.8125rem;
+    }
+}
+
+.label-text{
+    font-weight: 500;
+    font-size: 0.8125rem;
+    line-height: 100%;
+    margin: 0;
+    
+    @include tablet{
+        font-size: 1.0625rem;
+        line-height: 1.875rem;
+    }
+
+    @include desktop{
+        font-size: 0.9375rem;
+        line-height: 1.8125rem;
+    }
+}
+
+.btn-text{
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 100%;
+    margin: 0;
+
+    @include tablet{
+        font-size: 1.0625rem;
+        line-height: 1.875rem;
+    }
+
+    @include desktop{
+        font-size: 0.9375rem;
+        line-height: 1.8125rem;
+    }
+}
+
+.error-text{
+    font-weight: 300;
+    font-size: 0.8125rem;
+    line-height: 100%;
+    margin: 0;
+
+    @include desktop{
+        font-size: 0.9375rem;
+    }
+}
+
+.validation{
+    @extend .error-text;
+    @include flex();
+    padding: spaceIncr(0.75) 0 spaceIncr(0.5) spaceIncr(3);
+    color: $validation-error;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url('../assets/icons/error.svg');
+    background-position: 4px 50%;
+    background-repeat: no-repeat;
+}
