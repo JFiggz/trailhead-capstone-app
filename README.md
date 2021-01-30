@@ -62,4 +62,4 @@ If you have any questions about the project or would like to contact me, please 
 This project was developed as a learning project and will not be maintained going forward.
 
 ## License
-MIT © [Jimmy Figliomeni]()
+GPL-3.0 License © [Jimmy Figliomeni]()
