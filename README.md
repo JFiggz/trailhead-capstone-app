@@ -32,7 +32,7 @@ As this was my capstone project, I have decided to no longer maintain or add add
 
 If you have any questions about the project or would like to contact me, please reach out to me on [LinkedIn](https://www.linkedin.com/in/jimmy-figliomeni/)!
 
-## Tech/Framework Used
+## Tech/Frameworks Used
 **Built with:**
 - React
 - SASS (SCSS)
