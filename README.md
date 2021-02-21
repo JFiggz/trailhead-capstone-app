@@ -1,5 +1,9 @@
 # trailhead
 
+## Accessing Application
+
+The app is deployed and can be accessed by visiting: [https://trailhead-capstone.herokuapp.com/](https://trailhead-capstone.herokuapp.com/)
+
 ## Overview
 
 trailhead is a single page application that aims to be a users "one stop shop" dashboard for planning out a day hike. 
