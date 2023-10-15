@@ -21,9 +21,9 @@ const PORT = process.env.PORT || 8080;
 
 //GraphQl Schema and Resolvers compiled
 const compiledSchema = makeExecutableSchema({
-    typeDefs,
-    resolvers
-})
+  typeDefs,
+  resolvers,
+});
 
 //Middleware
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -32,46 +32,47 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(session({
+app.use(
+  session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     genid: (req) => uuidv4(),
     saveUninitialized: false,
     store: new MemoryStore({
-        checkPeriod: 86400000
-    })
-}));
-
+      checkPeriod: 86400000,
+    }),
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+  done(null, user.id);
 });
 
 passport.deserializeUser(async (id, done) => {
-    try {
-        const user = await prisma.user.findUnique({ where: { id: id } });
-        done(null, user);
-    } catch (err) {
-        done(err);
-    };
-})
+  try {
+    const user = await prisma.user.findUnique({ where: { id: id } });
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
+});
 
 //Google Auth Middleware
 app.use('/googleAuth', googleAuth);
 
 //GraphQL Middleware
-app.use('/graphql', graphqlHTTP({
+app.use(
+  '/graphql',
+  graphqlHTTP({
     schema: compiledSchema,
-    graphiql: false,
-}));
-
+    graphiql: process.env.NODE_ENV === 'development',
+  })
+);
 
 //Server Port
 app.listen(PORT, () => {
-    console.log(`Server started on port: ${PORT}`);
+  console.log(`Server started on port: ${PORT}`);
 });
-
